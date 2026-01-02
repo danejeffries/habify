@@ -137,8 +137,8 @@ function familyDefaults() {
     mk("workout", 4),
     mk("Read 20 minutes/learn", 5),
     mk("Protein target hit", 4),
-    mk("Avoid alcohol", 5),
-    mk("In Bed by target time", 3)
+    mk("Avoid alcohol"), 5),
+    mk("In Bed by target time"), 3)
   ];
 }
 
@@ -904,6 +904,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
