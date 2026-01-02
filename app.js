@@ -133,7 +133,7 @@ function familyDefaults() {
   return [
     mk("Make bed", 7),
     mk("Stick to nutrition plan"), 7),
-    mk("10 000 steps", 5),
+    mk("10 000 steps"), 5),
     mk("workout", 4),
     mk("Read 20 minutes/learn", 5),
     mk("Protein target hit", 4),
@@ -904,6 +904,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
