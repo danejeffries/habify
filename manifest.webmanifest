@@ -1,5 +1,5 @@
 {
-  "name": "Habit Tracker",
+  "name": "Habify",
   "short_name": "Habits",
   "start_url": ".",
   "display": "standalone",
@@ -18,3 +18,4 @@
     }
   ]
 }
+
