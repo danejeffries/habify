@@ -132,13 +132,13 @@ function familyDefaults() {
   const mk = (name, goal) => ({ id: crypto.randomUUID(), name, goal, active: true });
   return [
     mk("Make bed", 7),
-    mk("Brush teeth (AM & PM)", 7),
-    mk("Homework / Study", 5),
-    mk("Physical activity", 3),
-    mk("Read 20 minutes", 5),
-    mk("Tidy room", 4),
-    mk("Screen-free time", 5),
-    mk("Kind act", 3)
+    mk("Stick to nutrition plan"), 7),
+    mk("10 000 steps", 5),
+    mk("workout", 4),
+    mk("Read 20 minutes/learn", 5),
+    mk("Protein target hit", 4),
+    mk("Avoid alcohol", 5),
+    mk("In Bed by target time", 3)
   ];
 }
 
@@ -904,6 +904,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
