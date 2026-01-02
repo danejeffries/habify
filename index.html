@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Habits</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+ <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="title">
+      <div class="appname">Habits</div>
+      <div class="subtitle" id="subtitle"></div>
+    </div>
+    <div class="top-actions">
+      <button class="btn ghost" id="btnParent">Parent</button>
+      <button class="btn" id="btnSummary">Summary</button>
+      <button class="btn" id="btnSettings">Settings</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="card highlight hidden" id="monthPrompt">
+      <div class="row">
+        <div>
+          <div class="card-h">New month</div>
+          <div class="muted">Review or edit habits for this month.</div>
+        </div>
+        <button class="btn" id="btnReviewMonth">Review</button>
+      </div>
+    </section>
+
+    <section class="grid3">
+      <section class="card">
+        <div class="card-h">Today</div>
+        <div class="row">
+          <div class="meter">
+            <div class="meterbar" id="todayBar"></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num" id="todayPct">0%</div>
+            <div class="kpi-sub" id="todayDetail"></div>
+          </div>
+        </div>
+        <div class="badges" id="todayBadges"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-h">This week</div>
+        <div class="row">
+          <div class="meter">
+            <div class="meterbar" id="weekBar"></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num" id="weekPct">0%</div>
+            <div class="kpi-sub" id="weekDetail"></div>
+          </div>
+        </div>
+        <div class="badges" id="weekBadges"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-h">This month</div>
+        <div class="row">
+          <div class="meter">
+            <div class="meterbar" id="monthBar"></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num" id="monthPct">0%</div>
+            <div class="kpi-sub" id="monthDetail"></div>
+          </div>
+        </div>
+        <div class="badges" id="monthBadges"></div>
+      </section>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <div class="card-h">Habits</div>
+          <div class="muted">Tap to complete today. Optional notes.</div>
+        </div>
+        <button class="btn" id="btnAddHabit">Add</button>
+      </div>
+
+      <div class="list" id="habitList"></div>
+      <div class="empty hidden" id="emptyState">No habits yet. Tap Add.</div>
+    </section>
+
+    <section class="card">
+      <div class="card-h">Rewards</div>
+      <div class="rewards" id="rewards"></div>
+    </section>
+
+  </main>
+
+  
+  <!-- JavaScript -->
+  <!-- Summary Modal -->
+<div class="modal hidden" id="summaryModal">
+  <div class="modal-backdrop" id="summaryClose"></div>
+
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Weekly Summary</div>
+        <div class="modal-sub" id="summaryRange"></div>
+      </div>
+
+      <div class="row" style="gap:10px;">
+        <button class="btn ghost" id="summaryPrevWeek">◀</button>
+        <button class="btn ghost" id="summaryNextWeek">▶</button>
+        <button class="btn" id="summaryCloseBtn">Close</button>
+      </div>
+    </div>
+
+    <div class="summary-section">
+      <div class="summary-kpis" id="summaryKpis"></div>
+    </div>
+
+    <div class="summary-section">
+      <div class="summary-grid" id="summaryGrid"></div>
+    </div>
+
+    <div class="summary-section">
+      <div class="modal-title" style="font-size:16px;">Month Overview</div>
+      <div class="row" style="gap:10px; margin-top:10px;">
+        <button class="btn ghost" id="summaryPrevMonth">◀</button>
+        <div class="modal-sub" id="summaryMonthLabel"></div>
+        <button class="btn ghost" id="summaryNextMonth">▶</button>
+      </div>
+      <div class="summary-kpis" id="summaryMonthKpis" style="margin-top:10px;"></div>
+    </div>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>
+
+
