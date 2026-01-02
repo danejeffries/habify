@@ -39,15 +39,9 @@ let summaryWeekOffset = 0;   // 0=this week, -1=last week, +1=next week
 let summaryMonthOffset = 0;  // 0=this month, -1=last month, +1=next month
 
 function requireParentPin() {
-  if (!state.settings.parentPin) return true;
-
-  const pin = prompt("Enter Parent PIN:");
-  if (pin !== state.settings.parentPin) {
-    alert("Incorrect PIN");
-    return false;
-  }
-  return true;
+  return true; // adult mode: no PIN
 }
+
 
 const habitList = $("habitList");
 const emptyState = $("emptyState");
@@ -910,6 +904,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
