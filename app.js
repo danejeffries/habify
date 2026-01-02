@@ -95,7 +95,7 @@ function init() {
   settingsFlow();
 });
 
-  btnParent.addEventListener("click", parentFlow);
+  btnParent?.addEventListener("click", parentFlow);
   btnSummary.addEventListener("click", summaryFlow);
 
  btnReviewMonth.addEventListener("click", () => {
@@ -911,6 +911,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
