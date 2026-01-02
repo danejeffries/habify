@@ -18,7 +18,7 @@ const btnReviewMonth = $("btnReviewMonth");
 
 const btnAddHabit = $("btnAddHabit");
 const btnSettings = $("btnSettings");
-const btnParent = $("btnParent");
+//const btnParent = $("btnParent");
 const btnSummary = $("btnSummary");
 // Summary modal elements
 const summaryModal = $("summaryModal");
@@ -904,6 +904,7 @@ function setTodayNote(habitId, note) {
     state.log.push({ date: today, habitId, note: trimmed });
   }
 }
+
 
 
 
